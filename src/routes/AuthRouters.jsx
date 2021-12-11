@@ -1,3 +1,4 @@
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginScream from '../pages/LoginScream';
 import RegisterScream from '../pages/RegisterScream';
