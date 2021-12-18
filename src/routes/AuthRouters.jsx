@@ -1,19 +1,20 @@
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import LoginScream from '../pages/LoginScream';
-import RegisterScream from '../pages/RegisterScream';
+import React from "react";
 
+import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+//import AppScreem from "../pages/AppScream";
 
+import LoginScream from "../pages/LoginScream"
+import RegisterScream from "../pages/RegisterScream";
 
-const AuthRouters = () => {
+const AuthRouter = () => {
   return (
-    <Router>
     <Switch>
-      <Route exact path="/login" component={LoginScream}/>
-      <Route exact  path="/register" component={RegisterScream}/>
+      <Route exact path="/auth/login" component={LoginScream} />
+      <Route exact path="/auth/register" component={RegisterScream} />
+      <Redirect to="/auth/login" />
     </Switch>
-  </Router>
-  )
-}
+  );
+};
 
-export default AuthRouters
+export default AuthRouter;

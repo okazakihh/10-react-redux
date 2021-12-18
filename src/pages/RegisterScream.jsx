@@ -8,12 +8,12 @@ const dispatch = useDispatch()
 
   const [data, setData] = useState({
     email: "",
-    user: "",
+    username: "",
     password: "",
     password2: "",
   });
 
-  const { email, user, password, password2 } = data;
+  const { email, username, password, password2 } = data;
   const handleChange = (e) => {
     const values = e.target.value;
     setData({
@@ -31,7 +31,7 @@ const dispatch = useDispatch()
       
     }
 
-    if (user.trim().length < 3 || user.trim()==="") {
+    if (username.trim().length < 3 || username.trim()==="") {
       alert("El usuario ingresado es incorrecto.\nRecuerde que debe tener minimo tres caracteres \ny el campo no puede estar vacio ");
     }
 
@@ -43,7 +43,7 @@ const dispatch = useDispatch()
       }
     }
 
-    dispatch(register(email, user, password));
+    dispatch(register(email, password, username));
   };
   return (
     <div className="container">
@@ -64,17 +64,17 @@ const dispatch = useDispatch()
               />
               <label htmlFor="icon_prefix1">Email</label>
             </div>
-            <div className="input-field col s11">
+            <div className="input-field col s12">
               <i className="material-icons prefix">person</i>
               <input
-                id="icon_prefix2"
-                name="user"
-                type="text"
-                className="validate"
                 onChange={handleChange}
-                value={user}
+                value={username}
+                id="icon_prefix2"
+                className="materialize-textarea"
+                name="username"
+                type="text"
               />
-              <label htmlFor="icon_prefix2">User</label>
+              <label htmlFor="icon_prefix2">Username</label>
             </div>
             <div className="input-field col s11">
               <i className="material-icons prefix">vpn_key</i>
@@ -103,10 +103,10 @@ const dispatch = useDispatch()
           </div>
 
           <div className="row col s7">
-            <button className="waves-effect waves-light btn ">Send</button>
+            <button className="waves-effect waves-light btn " type="submit">Send</button>
             <hr className="row" />
             <div className=" row col">
-              <Link className="row " to="/login">
+              <Link className="row " to="/auth/login">
                 Login into acount
               </Link>
             </div>
