@@ -41,7 +41,8 @@ const LoginScream = () => {
   };
 
   return (
-    <div className="container">
+    <div className="blue"> 
+    <div className="container  ">
       <h3 className="tittle">Login page</h3>
       <hr />
 
@@ -85,6 +86,7 @@ const LoginScream = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

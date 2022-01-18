@@ -1,25 +1,27 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../actions/auth";
+import { limpiar } from "../actions/nomina";
 
 const Navbar = () => {
-    const  dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const handleLogout = () => {
-        dispatch(logout());
+  const handleLogout = () => {
+    var cerrar = window.confirm("Esta seguro que desea cerrar sesion?");
+    if (cerrar === true) {
+      dispatch(limpiar());
+      dispatch(logout());
     }
+  };
 
   return (
-    <nav>
-      <div className="nav-wrapper green">
-        <span >Calculadora nominal</span>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <button className=" btn red waves-effect waves-light btn" onClick={handleLogout}>logout</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    
+          <button
+            className="btn-floating btn-large waves-effect waves-light red right up"
+            onClick={handleLogout}>
+            <i className="material-icons">power_settings_new</i>
+          </button>
+     
   );
 };
 

@@ -1,11 +1,11 @@
 import { types } from "../types/Types";
-import { firebase, GoogleAuthProvider } from "../firebase/config-firebase";
+import { firebase, googleAuthProvider } from "../firebase/config-firebase";
 
 export const googlelogin = () => {
   return (dispatch) => {
     firebase
       .auth()
-      .signInWithPopup(GoogleAuthProvider)
+      .signInWithPopup(googleAuthProvider)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
       });
@@ -18,7 +18,6 @@ export const emailAndPasswordLogin = (email, password) => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        console.log(user)
         dispatch(login(user.uid, user.displayName));
       });
   };

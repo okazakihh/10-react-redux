@@ -1,9 +1,7 @@
 import React from "react";
 
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
-//import AppScreem from "../pages/AppScream";
-
+import { Redirect } from "react-router";
 import LoginScream from "../pages/LoginScream"
 import RegisterScream from "../pages/RegisterScream";
 

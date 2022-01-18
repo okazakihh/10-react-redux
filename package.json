@@ -6,7 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "firebase": "^9.6.0",
+    "cra-template-pwa": "^1.0.3",
+    "firebase": "^9.6.3",
     "history": "5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -14,6 +15,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
+    "reactfire": "^4.2.1",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "web-vitals": "^0.2.4",
@@ -53,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "vite-plugin-pwa": "^0.11.13"
   }
 }
